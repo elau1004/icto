@@ -12,6 +12,7 @@ SEE: [Grokking Relational Database Design](https://www.manning.com/books/grokkin
 ### Consistency
 Consistency helps with the future maintenance of your application.  Your code will out live your tenure of your role at your organization.
 
+> [!IMPORTANT]
 > Profit is in the operation.
 
 Good convention starts with coding standards.
@@ -42,6 +43,7 @@ The following are augmentation to the above suggested standard.
 
 ### Object design.
 We must strive to not pollute an object.  As the saying goes:
+> [!WARNING]
 > Garbage in, garbage out.
 
 Use the smallest data type for your attributes.  The data types are part of your documentation.  For example, there are 195 recognize independent sovereign countries and we should use a `tinyint`, single byte, as its `ID` instead of `INT` data type which is **4** bytes and can store a maximum **2,147,483,647** positive values.  This does **not** convey that we only have a small dataset.
