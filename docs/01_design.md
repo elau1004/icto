@@ -29,8 +29,8 @@ We shall build upon [Grokking Relational Database Design](https://www.manning.co
 
 #### Maintainability and ease of use
 * We feel that this is the most important point for human cost is most expensive.  You code becomes legacy the moment is done coding.  Your code will out live your tenure of your role at your organization.
->>> [!IMPORTANT]
->>> Code is written for the next person or your future self to support.  Do the best job up front so that you don't be cursed out.
+> [!IMPORTANT]
+> Code is written for the next person or your future self to support.  Do the best job up front so that you don't be cursed out.
 * Naming convention.
 The following are the convention we shall use:
   * Use [Snake Case](https://en.wikipedia.org/wiki/Snake_case).
@@ -56,7 +56,7 @@ The following are the convention we shall use:
 #### Performance and optimization
 * You only insert once, update a little, and query a lot.
 * Your most populate queries access pattern need to be identified early.  Try to load up your database early to get a feel for your expected performance.
-* *Index*
+* Do **NOT** create single column indices except for the primary key.
 
 #### Data security
 * This must **not** be an after thought.  The following columns are an immediate call out to be addressed:
@@ -73,8 +73,8 @@ The following are the convention we shall use:
 ### Chapter 4
 #### Entities and attributes
 * We shall capture our design into an E-R diagrams.  We shall use **[ERD Concepts](https://www.erdconcepts.com/download.html)** as our tool of choice.  The data model format is stored in XML which makes it easier to parse by our code generator.
+  * Do **NOT** use SQL reserved words.
   * We shall use **singular** form to name entities for we intent to comply with Object Oriented naming convention.
-  * Do **NOT** use any SQL reserved words.
   * We shall use **crow's foot** notation.
   * We shall use the **pre-configured** template to start all design exercises.
 
