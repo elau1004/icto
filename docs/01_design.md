@@ -6,7 +6,7 @@ You can design you application approaching it either from the UI or from the dat
 
 ## Database Design
 We shall build upon [Grokking Relational Database Design](https://www.manning.com/books/grokking-relational-database-design) by adding our opinionated comments shaped by our experience without repeating what is written in the book.
-This is an [early access copy]() of the book that may be a little out of date.
+This is an [early access copy](https://github.com/elau1004/icto/blob/main/docs/Grokking%20Relational%20Database%20Design%20-%20MEAP.pdf) of the book that may be a little out of date.
 
 ## Grokking Relational Database Design
 ### Chapter 1 - Introduction to database and SQL
