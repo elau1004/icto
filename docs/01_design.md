@@ -66,7 +66,7 @@ The following are the convention we shall use:
     * Dates
     * Externally issues IDs and account numbers
   * Financial related
-* Keep your attack surface as small as possible.  Don't have all then sensitive data in one location.  Do NOT have simple `SELECT *` query displaying many of your sensitive data to the screen.
+* Keep your attack surface as small as possible.  Don't have all then sensitive data in one location.  Do **NOT** have simple `SELECT` query display many of your sensitive data to the screen.  Don't short-cut data privacy.  You need to build a discipline around protecting your data.
 
 #### Scalability and flexibility
 * We believe a well designed data model can yield tremendous performance **without** external caching.  It should **not** be the first go to solution before you have examine your design.
