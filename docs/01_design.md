@@ -2,21 +2,22 @@
 
 You should not jump straight into coding.  From a good design we shall generate majority of the scaffolding of your application.
 
-You can design you application approaching it either from the UI or from the database.  The UI is primary purpose is to capture and display data.  However, not  all data can be captured through an UI, for example external data integration.  Captured data shall be persisted in structures in a database that will be eventually queried.  Our methodology is to first defined the data model to capture all pertinent data that shall be displayed or quired.
+You can design you application approaching it either from the UI or from the database.  The UI is primary purpose is to capture and display data.  However, not all data can be captured through an UI, for example external data integration.  Captured data shall be persisted in structures in a database that will be eventually queried.  Our methodology is to first defined the data model to capture all pertinent data that shall be displayed or quired.
 
 ## Database Design
 We shall build upon [Grokking Relational Database Design](https://www.manning.com/books/grokking-relational-database-design) by adding our opinionated comments shaped by our experience without repeating what is written in the book.
+This is an [early access copy]() of the book that may be a little out of date.
 
 ## Grokking Relational Database Design
-### Chapter 1
+### Chapter 1 - Introduction to database and SQL
 > [!IMPORTANT]
 > Read it carefully.
 
-### Chapter 2
+### Chapter 2 - Related tables and more SQL
 > [!IMPORTANT]
 > Read it carefully.
 
-### Chapter 3
+### Chapter 3 - Overview of database design
 #### Data consistency and integrity
 * We must strive to not pollute an object.  As the saying goes:
 > [!WARNING]
@@ -55,7 +56,7 @@ The following are the convention we shall use:
 
 #### Performance and optimization
 * You only insert once, update a little, and query a lot.
-* Your most populate queries access pattern need to be identified early.  Try to load up your database early to get a feel for your expected performance.
+* Your most popular queries access pattern need to be identified early.  Try to load up your database early to get a feel for your expected performance.
 * Do **NOT** create single column indices except for the primary key.
 
 #### Data security
@@ -65,13 +66,12 @@ The following are the convention we shall use:
     * Dates
     * Externally issues IDs and account numbers
   * Financial related
-* Keep you attack surface as small as possible.  Don't have all then sensitive data in one location.  Do have simple `SELECT` query display many of your sensitive data to the screen.
+* Keep your attack surface as small as possible.  Don't have all then sensitive data in one location.  Do NOT have simple `SELECT *` query displaying many of your sensitive data to the screen.
 
 #### Scalability and flexibility
 * We believe a well designed data model can yield tremendous performance **without** external caching.  It should **not** be the first go to solution before you have examine your design.
 
-### Chapter 4
-#### Entities and attributes
+### Chapter 4 - Entities and attributes
 * We shall capture our design into an E-R diagrams.  We shall use **[ERD Concepts](https://www.erdconcepts.com/download.html)** as our tool of choice.  The data model format is stored in XML which makes it easier to parse by our code generator.
   * Do **NOT** use SQL reserved words.
   * We shall use **singular** form to name entities for we intent to comply with Object Oriented naming convention.
@@ -90,7 +90,7 @@ The following are the convention we shall use:
 * Numeric data types are preferred over string data types.  Depending on the target DBMS, do **NOT** store lookup codes as strings just to make your your SQL easier to write.
 * If you have to mix currencies with and without decimals, use `int` and deal with the decimal via a currency code qualifier.
 * We suggest to store the `Date` and `Time` component separately instead of `Timestamp` to provide the flexibility to index just the data portion.
-* Do not use `GUID` or `UUID`.  There are to store client side generate unique IDs.  Chances are you do not have a use case to have a globally distributed database.  A centralized generated `ID` is sufficient.  However, if you truly have a use case for it and you need less than nine gloablly distributed databases, you can use a sequence object to generate IDs incremented by 10.
+* Do not use `GUID` or `UUID`.  There are to store client side generate unique IDs.  Chances are you do not have a use case to have a globally distributed database.  A centralized generated `ID` is sufficient.  However, if you truly have a use case for it and you need less than nine globally distributed databases, you can use a sequence object to generate IDs incremented by 10.
 * Always setup your database in **UTF-8** character set with the **UTC** timezone.
 
 ### Chapter 5
